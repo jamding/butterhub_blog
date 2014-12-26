@@ -1,6 +1,0 @@
-{
-	"dropbox_url" : "//this is where your cdn would go",
-	"target_dir" : "local directory to watch",
-	"create_api" : "api to post on",
-	"api_key" : "secret api key for http authentication"
-}

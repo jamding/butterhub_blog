@@ -1,3 +1,3 @@
 module.exports = {
-	url: 'mongodb://localhost/photo_app'
+	url: 'mongodb://butteruser:superpassword@ds029541.mongolab.com:29541/butterdb'
 }
