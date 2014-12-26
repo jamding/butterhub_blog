@@ -5,7 +5,7 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
 var db = require('./config/db');
-var secret = require('./config/apikey');
+var api_key = require('./config/apikey');
 var port = process.env.PORT || 8080;
 
 mongoose.connect(db.url);
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
-require('./app/routes')(app);
+require('./app/routes')(app, api_key.api_key);
 
 app.listen(port, function() { console.log('magic on port ' + port); });
 

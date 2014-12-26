@@ -1,6 +1,6 @@
 var Photo = require('./models/photo');
 
-module.exports = function(app) {
+module.exports = function(app, api_key) {
 	app.get('/api/photos/:last', function(req, res) {
 		Photo.find({})
 		.where('epoch').lt(req.params.last)
@@ -14,6 +14,15 @@ module.exports = function(app) {
 	
 	app.post('/api/photos', function(req, res) {
 		var timestamp = Date.now();
+		if(req.body.api_string === undefined) {
+			res.send('not authorized (1)');
+			return;
+		}
+		var given_key = new Buffer(req.body.api_string, 'base64').toString('ascii');
+		if(given_key !== api_key) {
+			res.send('not authorized (2)');
+			return;
+		}
 		Photo.create({
 			name: req.body.name,
 			path: req.body.path,

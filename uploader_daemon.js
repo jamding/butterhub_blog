@@ -11,7 +11,7 @@ if(!fs.existsSync(config_file)) {
 }
 
 var options = JSON.parse(fs.readFileSync(config_file, 'utf8'));
-if(!options || !options.dropbox_url || !options.target_dir || !options.create_api) {
+if(!options || !options.dropbox_url || !options.target_dir || !options.create_api || !options.api_key) {
 	console.log('Missing configuration options from ' + config_file);
 	return;
 }
@@ -36,9 +36,10 @@ function uploadHandler(event, filename) {
 	} else {
 		var basename = filename.split('.')[0];
 		console.log(basename);
+		var given_api = new Buffer(options.api_key).toString('base64');
 		request.post(
 			options.create_api,
-			{ form: { name: basename.replace('_', ''), path: options.dropbox_url + filename } },
+			{ form: { name: basename.replace('_', ''), path: options.dropbox_url + filename, api_string: given_api } },
 			function (error, response, body) {
 				console.log('Error: ' + error);
 				console.log('Response: ' + response);
