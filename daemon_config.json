@@ -1,5 +1,6 @@
 {
-	"dropbox_url" : "https://dl.dropboxusercontent.com/u/38142526/butterhub/",
-	"target_dir" : "C:/Users/jamdi_000/Dropbox/Public/butterhub",
-	"create_api" : "http://localhost:8080/api/photos"
+	"dropbox_url" : "//this is where your cdn would go",
+	"target_dir" : "local directory to watch",
+	"create_api" : "api to post on",
+	"api_key" : "secret api key for http authentication"
 }
