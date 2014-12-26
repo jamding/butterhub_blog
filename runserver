@@ -24,9 +24,9 @@ info 'updating source code'
 cd $SRC_DIR
 	git pull origin master
 	info 'updating dependencies'
-	npm update
+	#npm update
 	info 'bower update'
-	bower update
+	#bower update --allow-root
 
 
 info 'starting nodes on 8000-8003'
