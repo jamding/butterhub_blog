@@ -1,0 +1,41 @@
+
+
+LOG_DIR=/var/log/nodes
+MAX_RETRY=5
+SRC_DIR=/usr/local/src/butterhub
+
+info() { echo "INFO: $1"; }
+die() { echo "ERROR: $1. Aborting!"; exit 1; }
+
+info 'Stopping running instances and Nginx'
+forever stopall 2> /dev/null
+service nginx stop 2> /dev/null
+
+info 'updating yum repos and install dependencies'
+yum update -y
+yum install -y --enablerepo=epel git nginx npm || die 'failed to install dep'
+
+if !type forever > /dev/null 2>&1; then
+	info 'installing forever module'
+	npm install forever -g
+fi
+
+info 'updating source code'
+cd $SRC_DIR
+	git pull origin master
+	info 'updating dependencies'
+	npm update
+	info 'bower update'
+	bower update
+
+
+info 'starting nodes on 8000-8003'
+
+PORT=8000 forever start -a -l $LOG_DIR/8000/fv.log -o $LOG_DIR/8000/out.log -e $LOG_DIR/8000/err.log -m $MAX_RETRY server.js 
+PORT=8001 forever start -a -l $LOG_DIR/8001/fv.log -o $LOG_DIR/8001/out.log -e $LOG_DIR/8001/err.log -m $MAX_RETRY server.js 
+PORT=8002 forever start -a -l $LOG_DIR/8002/fv.log -o $LOG_DIR/8002/out.log -e $LOG_DIR/8002/err.log -m $MAX_RETRY server.js 
+PORT=8003 forever start -a -l $LOG_DIR/8003/fv.log -o $LOG_DIR/8003/out.log -e $LOG_DIR/8003/err.log -m $MAX_RETRY server.js 
+
+info 'starting nginx'
+chkconfig nginx on
+service nginx start
