@@ -5,6 +5,7 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
 var db = require('./config/db');
+var secret = require('./config/apikey');
 var port = process.env.PORT || 8080;
 
 mongoose.connect(db.url);
