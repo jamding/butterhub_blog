@@ -1,11 +1,32 @@
-<div class="jumbotron text-center">
-    <h1>Home Page 4 Life</h1>
+<div class="container" >
 
-    <p>{{ tagline }}</p>
-</div>
-	<div ng-repeat="photo in photos">
-		<div class="col-sm-6 col-md-3" >
-			<img class="img-responsive" src="{{photo.path}}" />
-			{{photo.name}}
-		</div>
+
+
+
+      <div class="container bhead" >
+        <a href="/"  ><h1 >b u t t e r h u b</h1></a>
+        <p class="lead intro" >foodblog & culinary portfolio of <a href="/bakery">bakery</a> owner and food enthusiast <a target="_blank" href="http://www.jamesding.me" style="font-weight:bold">james ding</a></p>
+      </div>
+
+	<div ng-repeat="photo in photos" >
+		<div style="display:inline-block; float:left;" class="col-md-3 col-sm-4 col-xs-12" ng-click="enlarge(photo._id)" id="{{photo._id}}" >
+			<div class="ratio" style="background-image:url('{{photo.path}}');" ng-mouseenter="showName(photo.name)"  />
+
+		</div> 
+		<br>
 	</div>
+</div>
+	
+
+</div>
+<div id="ajaxButton" ng-click="ajaxUpdate()" class="footerButton">
+	+ more steak & cakes!
+</div>
+
+<div id="myMessage" class="footerButton" style="display:none;">
+	& more to come! <span style="color: gray; font-size: 16px;">(did someone say <a style="font-weight: bold" href="/bakery">bakery</a>?)</span>
+</div>
+	
+<div ng-click="hideName()" ng-show="hidden === false" data-ng-animate="'fade'" id="image_name" >
+{{footer_text}}
+</div>

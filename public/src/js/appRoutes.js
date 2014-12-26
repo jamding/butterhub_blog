@@ -4,9 +4,9 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			templateUrl: '../views/home.html',
 			controller: 'MainController'
 		})
-		.when('/photos', {
-			templateUrl: '../views/photo.html',
-			controller: 'PhotoController'
+		.when('/bakery', {
+			templateUrl: '../views/bakery.html',
+			controller: 'BakeryController'
 		});
 
 	$locationProvider.html5Mode(true);

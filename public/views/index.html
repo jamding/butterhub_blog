@@ -5,36 +5,31 @@
     <base href="/">
 
     <title>Butterhub, Foodblog Extraordinaire</title>
+	
+	<link rel="icon" type="img/ico" href="../favicon.png">
+	<meta charset="UTF-8">
+	<meta name="description" content="Cakes & Steaks (among other culinary escapades) from Butterhub Bakery head chef, James Ding">
+	<meta name="keywords" content="cookies, cakes, butterhub, food, blog, foodporn, desserts, steak, bakery, chicken, pork, vegetarian, fried, James Ding">
+	<meta name="author" content="James Ding">
 
     <!-- CSS -->
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700|Crimson+Text:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="dist/css/style.min.css"> <!-- custom styles -->
 
     <!-- JS -->
     <script src="libs/angular/angular.min.js"></script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>
     <script src="libs/angular-route/angular-route.min.js"></script>
 
     <!-- ANGULAR CUSTOM -->
     <script src="dist/js/app.min.js"></script>
 </head>
-<body ng-app="sampleApp" ng-controller="PhotoController">
-<div class="container">
-
-    <!-- HEADER -->
-    <nav class="navbar navbar-inverse">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">Stencil: Node and Angular</a>
-        </div>
-
-        <!-- LINK TO OUR PAGES. ANGULAR HANDLES THE ROUTING HERE -->
-        <ul class="nav navbar-nav">
-            <li><a href="/photos">Nerds</a></li>
-        </ul>
-    </nav>
+<body ng-app="sampleApp" ng-controller="MainController">
 
     <!-- ANGULAR DYNAMIC CONTENT -->
     <div ng-view></div>
 
-</div>
+
 </body>
 </html>

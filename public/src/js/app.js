@@ -1,1 +1,1 @@
-angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'PhotoCtrl', 'PhotoService']);
+angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'BakeryCtrl', 'PhotoService']);

@@ -1,7 +1,7 @@
 angular.module('PhotoService', []).factory('Photo', ['$http', function($http) {
 	return {
-		get: function() {
-			return $http.get('/api/photos');
+		get: function(last) {
+			return $http.get('/api/photos/' + last);
 		},
 
 		create: function(photoData) {
