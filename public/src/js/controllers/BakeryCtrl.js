@@ -1,3 +1,3 @@
 angular.module('BakeryCtrl', []).controller('BakeryController', ['$scope', function($scope) {
-	$scope.tagline = 'Photoy stuff';
+	$scope.tagline = 'Ship now, fix later';
 }]);
