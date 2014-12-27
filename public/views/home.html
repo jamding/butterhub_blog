@@ -4,13 +4,13 @@
 
 
       <div class="container bhead" >
-        <a href="/"  ><h1 >b u t t e r h u b</h1></a>
-        <p class="lead intro" >foodblog & culinary portfolio of <a href="/bakery">bakery</a> owner and food enthusiast <a target="_blank" href="http://www.jamesding.me" style="font-weight:bold">james ding</a></p>
+        <a href="/" ><h1 class="animated bounceInDown" >b u t t e r h u b</h1></a>
+        <p class="lead intro animated fadeInDown" style="animation-delay:2s; -moz-animation-delay:2s; -webkit-animation-delay:2s;" >foodblog & culinary portfolio of <a href="/bakery" >bakery</a> owner and food enthusiast <a target="_blank" href="http://www.jamesding.me" style="font-weight:bold">james ding</a></p>
       </div>
 
-	<div ng-repeat="photo in photos" >
-		<div style="display:inline-block; float:left;" class="col-md-3 col-sm-4 col-xs-12" ng-click="enlarge(photo._id)" id="{{photo._id}}" >
-			<div class="ratio" style="background-image:url('{{photo.path}}');" ng-mouseenter="showName(photo.name)"  />
+	<div ng-repeat="photo in photos" class="animated bounceInUp" style="animation-delay:.5s; -moz-animation-delay:.5s; -webkit-animation-delay:.5s;">
+		<div style="display:inline-block; float:left;" class="col-md-4 col-sm-6 col-xs-12" ng-click="enlarge(photo._id)" id="{{photo._id}}" >
+			<div class="ratio" style="background-image:url('{{photo.path}}');" ng-mouseenter="showName(photo.name)" id="ratio_{{photo._id}}" />
 
 		</div> 
 		<br>

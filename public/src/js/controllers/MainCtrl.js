@@ -3,9 +3,43 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', 'Photo', 
 
 	$scope.footer_text = 'This is a test!';
 	
+
+	var big_list = [];
+	$scope.enlarge = function(div_id) {
+		if(big_list.indexOf(div_id) > -1) {
+			console.log('big');
+			//make it huge, remove it from the big list
+			$('#' + div_id).removeClass('col-md-8');
+			$('#' + div_id).removeClass('col-sm-12');
+			$('#' + div_id).removeClass('shake');
+			$('#' + div_id).removeClass('animated');
+			$('#' + div_id).addClass('bounce');
+			$('#' + div_id).addClass('animated');
+			$('#' + div_id).addClass('col-sm-6');
+			$('#' + div_id).addClass('col-sm-6');
+			$('#' + div_id).addClass('col-md-4');
+			$('#ratio_' + div_id).css({ 'padding-bottom' : '100%'});
+			var idx = big_list.indexOf(div_id);
+			delete big_list[idx];
+		} else {
+			//make it big, add to big list
+			console.log('small');
+			$('#' + div_id).removeClass('col-md-4');
+			$('#' + div_id).removeClass('col-sm-6');
+			$('#' + div_id).removeClass('bounce');
+			$('#' + div_id).removeClass('animated');
+			$('#' + div_id).addClass('shake');
+			$('#' + div_id).addClass('animated');
+			$('#' + div_id).addClass('col-sm-12');
+			$('#' + div_id).addClass('col-md-8');
+			$('#ratio_' + div_id).css({ 'padding-bottom' : '99%'});
+			big_list.push(div_id);
+		}
+	};
+	
+	/*
 	var huge_list = [];
 	var big_list = [];
-
 	$scope.enlarge = function(div_id) {
 		if(huge_list.indexOf(div_id) > -1) {
 			console.log('huge');
@@ -38,6 +72,7 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', 'Photo', 
 		}
 		
 	};
+	*/
 	
 	var last_epoch = Date.now();
 	
