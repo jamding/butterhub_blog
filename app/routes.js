@@ -5,7 +5,7 @@ module.exports = function(app, api_key) {
 		Photo.find({})
 		.where('epoch').lt(req.params.last)
 		.sort('-epoch')
-		.limit(9)
+		.limit(6)
 		.exec(function(err, photos) {
 			if(err) res.send(err);
 			res.json(photos);
