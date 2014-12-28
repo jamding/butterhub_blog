@@ -3,7 +3,7 @@ var Photo = require('./models/photo');
 module.exports = function(app, api_key) {
 	app.get('/api/photos/:last', function(req, res) {
 		Photo.find({})
-		.where('epoch').lt(req.params.last)
+		.where('epoch').lte(req.params.last)
 		.sort('-epoch')
 		.limit(6)
 		.exec(function(err, photos) {
