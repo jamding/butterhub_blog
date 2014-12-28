@@ -109,12 +109,25 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', 'Photo', 
 	};
 	
 	
-	$scope.showName = function(text) {
+	$scope.showName = function(text, div_id) {
 		$scope.footer_text = text.replace('_', ' ');
 		$scope.hidden = false;
+		
+		$('#' + div_id).removeClass('bounceOutUp');
+		$('#' + div_id).removeClass('animated');
+		$('#' + div_id).addClass('bounceInDown');
+		$('#' + div_id).addClass('animated');
 	};
 	
-	$scope.hideName = function() {
-		$scope.hidden = true;
+	$scope.hideName = function(div_id) {
+		
+		
+		$('#' + div_id).removeClass('bounceInDown');
+		$('#' + div_id).removeClass('animated');
+		$('#' + div_id).addClass('bounceOutUp');
+		$('#' + div_id).addClass('animated');
+		setTimeout(function() {
+			$scope.hidden = true;
+		}, 500);
 	};
 }]);

@@ -21,7 +21,7 @@ padding-top: 10vh; padding-bottom:10vh; color: black;
 color: #9e9b95; padding-top: 2vh;
 } 
 #image_name {
-text-align:center;width:100%; background-color: rgba(0,0,0,.7); position:fixed; top: 0; padding: 1vh; font-size: 3em; color: #ff0099;
+text-align:center;width:100%; background-color: rgba(0,0,0,.65); position:fixed; top: 0; padding: 3vh; font-size: 2em; color: #ff0099;
 }
 
 .ratio:hover {

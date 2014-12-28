@@ -1,19 +1,22 @@
-<div class="container" ng-mouseleave="hideName()" >
+<div class="container"  >
 
 
 
 
-      <div class="container bhead" >
+      <div class="bhead" >
         <a href="/" ><h1 class="animated bounceInDown" style="animation-delay:.1s; -moz-animation-delay:.1s; -webkit-animation-delay:.1s;">b u t t e r h u b</h1></a>
         <p class="lead intro animated fadeInDown" style="animation-delay:2s; -moz-animation-delay:2s; -webkit-animation-delay:2s;" >foodblog & culinary portfolio of <a href="/bakery" >bakery</a> owner and food enthusiast <a target="_blank" href="http://www.jamesding.me" style="font-weight:bold">james ding</a></p>
       </div>
+	  
+	<div ng-mouseleave="hideName('image_name')">
 
-	<div ng-repeat="photo in photos" class="animated bounceInUp" style="animation-delay:.6s; -moz-animation-delay:.6s; -webkit-animation-delay:.6s;">
-		<div style="display:inline-block; float:left;" class="col-md-4 col-sm-6 col-xs-12" ng-click="enlarge(photo._id)" id="{{photo._id}}" >
-			<div class="ratio" style="background-image:url('{{photo.path}}');" ng-mouseenter="showName(photo.name)" id="ratio_{{photo._id}}" />
+		<div ng-repeat="photo in photos" class="animated bounceInUp" style="animation-delay:.6s; -moz-animation-delay:.6s; -webkit-animation-delay:.6s;">
+			<div style="display:inline-block; float:left;" class="col-md-4 col-sm-6 col-xs-12" ng-click="enlarge(photo._id)" id="{{photo._id}}" >
+				<div class="ratio" style="background-image:url('{{photo.path}}');" ng-mouseenter="showName(photo.name, 'image_name')" id="ratio_{{photo._id}}" />
 
-		</div> 
-		<br>
+			</div> 
+			<br>
+		</div>
 	</div>
 </div>
 	
@@ -27,6 +30,6 @@
 	& more to come! <span style="color: gray; font-size: 16px;">(did someone say <a style="font-weight: bold" href="/bakery">bakery</a>?)</span>
 </div>
 	
-<div ng-click="hideName()" ng-show="hidden === false" data-ng-animate="'fade'" id="image_name" >
+<div ng-click="hideName('image_name')" ng-show="hidden === false" data-ng-animate="'fade'" id="image_name" >
 {{footer_text}}
 </div>
