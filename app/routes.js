@@ -9,6 +9,21 @@ module.exports = function(app, api_key) {
 		.exec(function(err, photos) {
 			if(err) res.send(err);
 			res.json(photos);
+			/*
+			var randomnumber = Math.floor(Math.random()*100)
+			console.log('updating last access times now');
+			for(var i in photos) {
+				if(photos[i].epoch < 0) {
+					photos[i].epoch = Date.now();
+				} else {
+					photos[i].epoch = photos[i].epoch - randomnumber;
+				}
+				photos[i].save(function(err) {
+					if (err) console.log(err);
+					// saved!
+				});
+			}
+			*/
 		});
 	});
 	
