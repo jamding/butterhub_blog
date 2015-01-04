@@ -104,6 +104,8 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', 'Photo', 
 		console.log('Error: ' + data);
 	});
 	
+	
+	
 	$scope.deletePhoto = function(data) {
 		console.log(data);
 	};
