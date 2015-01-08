@@ -38,7 +38,7 @@ a:hover {
 }
 
 .footerButton {
-	margin-top: 10vh;width: 100%; padding: 5vh; font-size: 32px; text-align:center;
+	margin-top: 5vh;width: 100%; padding-top: 5vh; font-size: 32px; text-align:center; padding-bottom: 2vh;
 }
 
 #ajaxButton:hover {
