@@ -11,9 +11,9 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', 'Photo', 
 			//make it huge, remove it from the big list
 			$('#' + div_id).removeClass('col-md-8');
 			$('#' + div_id).removeClass('col-sm-12');
-			$('#' + div_id).removeClass('shake');
+			$('#' + div_id).removeClass('fadeIn');
 			$('#' + div_id).removeClass('animated');
-			$('#' + div_id).addClass('bounce');
+			$('#' + div_id).addClass('bounceIn');
 			$('#' + div_id).addClass('animated');
 			$('#' + div_id).addClass('col-sm-6');
 			$('#' + div_id).addClass('col-sm-6');
@@ -26,9 +26,9 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', 'Photo', 
 			console.log('small');
 			$('#' + div_id).removeClass('col-md-4');
 			$('#' + div_id).removeClass('col-sm-6');
-			$('#' + div_id).removeClass('bounce');
+			$('#' + div_id).removeClass('bounceIn');
 			$('#' + div_id).removeClass('animated');
-			$('#' + div_id).addClass('shake');
+			$('#' + div_id).addClass('fadeIn');
 			$('#' + div_id).addClass('animated');
 			$('#' + div_id).addClass('col-sm-12');
 			$('#' + div_id).addClass('col-md-8');
@@ -115,18 +115,18 @@ angular.module('MainCtrl', []).controller('MainController', ['$scope', 'Photo', 
 		$scope.footer_text = text.replace('_', ' ');
 		$scope.hidden = false;
 		
-		$('#' + div_id).removeClass('bounceOutUp');
+		$('#' + div_id).removeClass('fadeOutDown');
 		$('#' + div_id).removeClass('animated');
-		$('#' + div_id).addClass('bounceInDown');
+		$('#' + div_id).addClass('fadeInUp');
 		$('#' + div_id).addClass('animated');
 	};
 	
 	$scope.hideName = function(div_id) {
 		
 		
-		$('#' + div_id).removeClass('bounceInDown');
+		$('#' + div_id).removeClass('fadeInUp');
 		$('#' + div_id).removeClass('animated');
-		$('#' + div_id).addClass('bounceOutUp');
+		$('#' + div_id).addClass('fadeOutDown');
 		$('#' + div_id).addClass('animated');
 		setTimeout(function() {
 			$scope.hidden = true;
