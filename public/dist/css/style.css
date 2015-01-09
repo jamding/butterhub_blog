@@ -52,3 +52,10 @@ a:hover {
 	background-color: rgba(0,0,0, .7);
 	color: #eee;
 }
+		.sectioner {
+			padding-bottom: 50px;
+		}
+		.sectioner h3 {
+			font-size:32px;
+			padding-bottom:10px;
+		}
