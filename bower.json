@@ -6,6 +6,8 @@
         "font-awesome": "latest",
         "animate.css": "latest",
         "angular": "latest",
-        "angular-route": "latest"   
+        "angular-route": "latest",
+		"scrollmagic": "git://github.com/janpaepke/ScrollMagic.git",
+		"gsap": "latest"
     }
 }
